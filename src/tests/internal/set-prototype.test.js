@@ -1,5 +1,5 @@
 import { expect } from "@esm-bundle/chai";
-import { setPrototype } from "../../element/set-prototype";
+import { setPrototype } from "../../element/set-prototype.js";
 
 describe("internal: setPrototype", () => {
     it("declare basic", () => {

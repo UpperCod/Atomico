@@ -1,6 +1,6 @@
 import { expect } from "@esm-bundle/chai";
-import { createHooks } from "../create-hooks";
-import { useState } from "../hooks";
+import { createHooks } from "../create-hooks.js";
+import { useState } from "../hooks.js";
 
 describe("src/hooks/use-state", () => {
     it("single execution", () => {
@@ -25,7 +25,7 @@ describe("src/hooks/use-state", () => {
         let render = () => {
             if (loop) {
                 hooks.load(load);
-                hooks.updated();
+                hooks.cleanEffects()();
             } else {
                 done();
             }

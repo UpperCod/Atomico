@@ -1,6 +1,6 @@
 import { expect } from "@esm-bundle/chai";
-import { createHooks } from "../create-hooks";
-import { useEvent } from "../custom-hooks/use-event";
+import { createHooks } from "../create-hooks.js";
+import { useEvent } from "../custom-hooks/use-event.js";
 
 describe("src/hooks/custom-hooks/use-event", () => {
     it("association of useEvent to host", (done) => {

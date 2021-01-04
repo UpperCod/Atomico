@@ -1,6 +1,6 @@
 import { expect } from "@esm-bundle/chai";
-import { createHooks } from "../create-hooks";
-import { useProp } from "../custom-hooks/use-prop";
+import { createHooks } from "../create-hooks.js";
+import { useProp } from "../custom-hooks/use-prop.js";
 
 describe("src/hooks/custom-hooks/use-prop", () => {
     it("manipulation of the DOM object", () => {

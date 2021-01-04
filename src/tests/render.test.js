@@ -1,6 +1,6 @@
 import { expect } from "@esm-bundle/chai";
 import { render } from "../render.js";
-import html from "../../html/html";
+import html from "../../html/html.js";
 
 describe("src/render", () => {
     it("textContent", () => {

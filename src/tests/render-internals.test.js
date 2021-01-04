@@ -6,7 +6,7 @@ import {
     diffProps,
     setProperty,
 } from "../render.js";
-import html from "../../html/html";
+import html from "../../html/html.js";
 
 describe("src/render#flat", () => {
     it("flatDeep", () => {

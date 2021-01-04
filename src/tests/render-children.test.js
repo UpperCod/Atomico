@@ -1,6 +1,6 @@
 import { expect } from "@esm-bundle/chai";
 import { flat, renderChildren } from "../render.js";
-import html from "../../html/html";
+import html from "../../html/html.js";
 
 describe("src/render#children", () => {
     let createRandomList = (max, list = [], min = 0) => {

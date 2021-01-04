@@ -1,6 +1,6 @@
 import { expect } from "@esm-bundle/chai";
-import { createHooks } from "../create-hooks";
-import { useReducer } from "../hooks";
+import { createHooks } from "../create-hooks.js";
+import { useReducer } from "../hooks.js";
 
 describe("src/hooks/use-state", () => {
     it("initialState", () => {

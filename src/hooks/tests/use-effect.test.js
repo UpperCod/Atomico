@@ -1,6 +1,6 @@
 import { expect } from "@esm-bundle/chai";
-import { createHooks } from "../create-hooks";
-import { useEffect } from "../hooks";
+import { createHooks } from "../create-hooks.js";
+import { useEffect } from "../hooks.js";
 
 describe("src/hooks/use-effect", () => {
     /**

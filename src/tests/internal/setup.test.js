@@ -2,6 +2,7 @@ import { expect } from "@esm-bundle/chai";
 import { setup } from "../../element/setup.js";
 import { h } from "../../render.js";
 import { customElementScope } from "../element.test.js";
+
 describe("internal: setup", () => {
     it("setup", async () => {
         const Component = () => h("host");

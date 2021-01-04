@@ -13,7 +13,7 @@
         "./css": "./css.js"
     },
     "scripts": {
-        "test": "karma start --coverage",
+        "test": "web-test-runner {src,css,html}/**/*.test.js --node-resolve",
         "test:w": "karma start --auto-watch=true --single-run=false",
         "build:html": "rollup -c",
         "prepare": "npm run build:html && npm run test"
@@ -38,12 +38,10 @@
     "homepage": "https://github.com/atomicojs/atomico#readme",
     "devDependencies": {
         "@esm-bundle/chai": "^4.1.5",
-        "@open-wc/testing-karma": "^3.4.7",
         "@rollup/plugin-node-resolve": "^7.1.3",
         "@types/mocha": "^8.0.0",
-        "deepmerge": "^4.2.2",
+        "@web/test-runner": "^0.11.7",
         "htm": "^3.0.4",
-        "karma": "^5.1.0",
         "rollup": "^2.18.0"
     },
     "prettier": {
