@@ -23,18 +23,24 @@ const TRUE_VALUES = { true: 1, "": 1, 1: 1 };
  */
 export function setPrototype(proto, prop, schema, attrs, values) {
     /**@type {Schema} */
-    let { type, reflect, event, value, attr = getAttr(prop) } =
-        isObject(schema) && schema != Any ? schema : { type: schema };
+    let {
+        type,
+        reflect,
+        event,
+        value,
+        attr = getAttr(prop),
+    } = isObject(schema) && schema != Any ? schema : { type: schema };
 
     let isCallable = !(type == Function || type == Any);
 
     Object.defineProperty(proto, prop, {
         /**
-         * @this {import("./custom-element").BaseContext}
+         * @this {import("./base").Base}
          * @param {any} newValue
          */
         set(newValue) {
-            let oldValue = this[prop];
+            let { _props, _change = _props } = this;
+            let oldValue = _change[prop];
             let { error, value } = filterValue(
                 type,
                 isCallable && isFunction(newValue)
@@ -51,9 +57,8 @@ export function setPrototype(proto, prop, schema, attrs, values) {
 
             if (oldValue == value) return;
 
-            this._props[prop] = value;
-
-            this.update();
+            this._update();
+            this._change[prop] = value;
             /**
              * 1.7.0 >, this position reduces the amount of updates to the DOM and render
              */
@@ -70,10 +75,11 @@ export function setPrototype(proto, prop, schema, attrs, values) {
             });
         },
         /**
-         * @this {import("./custom-element").BaseContext}
+         * @this {import("./base").Base}
          */
         get() {
-            return this._props[prop];
+            let { _props, _change = _props } = this;
+            return _change[prop];
         },
     });
 

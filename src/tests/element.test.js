@@ -1,5 +1,5 @@
 import { expect } from "@esm-bundle/chai";
-import { c, Any } from "../element/custom-element";
+import { c, Any } from "../element/el-hooks";
 import html from "../../html/html";
 
 /**
